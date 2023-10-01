@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherit_hr_view_department_form" model="ir.ui.view">
+            <field name="name">hr.view.department.form</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="after">
+                    <group>
+                        <separator string="Activity deadlines"/>
+                        <group>
+                            <field string="Set a deadline on activities" name="can_apply_activity_deadlines"
+                                   widget="boolean_toggle"/>
+                        </group>
+                        <group attrs="{'invisible': [('can_apply_activity_deadlines', '=', False)]}">
+                            <field name="activity_deadlines_number"/>
+                        </group>
+                        <separator string="Quorum"/>
+                        <group>
+                            <field name="quorum" widget="boolean_toggle"/>
+                        </group>
+                        <group attrs="{'invisible': [('quorum', '=', False)]}">
+                            <label for="quorum_number"/>
+                            <div name="quorum_number_div" class="d-flex">
+                                <field name="quorum_number"/>
+                                <span class="oe_inline o_form_label mr-3 ml-5 oe_edit_only">/
+                                </span>
+                                <field name="quorum_number_max" readonly="1"/>
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Circuit of validation">
+                            <field name="circuit_ids">
+                                <tree editable="top">
+                                    <field name="user_id"
+                                           options="{'no_open': True, 'no_create': True, 'no_edit_create': True, 'no_quick_create': True}"
+                                           domain="[('share', '=', False)]" string="User" required="1"/>
+                                    <field name="role" string="Role"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- base structure of product.template, common with product.template -->
+
+        <record id="product_template_only_form_inherit_view" model="ir.ui.view">
+            <field name="name">Product form view</field>
+            <field name="model">product.template</field>
+            <field name="mode">primary</field>
+            <field eval="1" name="priority"/>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//widget[@name='web_ribbon']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//header//button[@name='action_open_label_layout']" position="before">
+                    <button name="from_draft_to_sent"
+                            attrs="{'invisible': ['|', ('active', '=', True), ('state', 'not in', ('draft'))]}"
+                            confirm="Are you sure you want to forward this creation request ?"
+                            string="Submit the creation request" class="oe_highlight" type="object"/>
+                    <button name="from_sent_to_validated"
+                            confirm="Do you really want to validate this creation request? ?"
+                            attrs="{'invisible': ['|', ('has_already_approved', '=', True), '|', ('active', '=', True), '|', ('can_validate_product', '=', False), ('state', 'not in', ('sent'))]}"
+                            string="Validate" class="oe_highlight"
+                            type="object"/>
+
+                    <button invisible="1" name="from_sent_to_rejected"
+                            confirm="Are you sure you want to reject this creation request? ?"
+                            attrs="{'invisible': ['|', ('active', '=', True), '|', ('can_validate_product', '=', False), ('state', 'not in', ('sent'))]}"
+                            string="Dismiss" class="oe_highlight"
+                            type="object"/>
+                    <button invisible="0" name="action_refuse_product_request"
+                            attrs="{'invisible': ['|', ('active', '=', True), '|', ('can_validate_product', '=', False), ('state', 'not in', ('sent'))]}"
+                            string="Dismiss" class="oe_highlight"
+                            type="object"/>
+
+                    <button name="put_to_draft"
+                            confirm="Are you sure you want to draft this creation request? ?"
+                            attrs="{'invisible': ['|', ('active', '=', True), '|', ('can_validate_product', '=', False), ('state', 'in', ('draft','validated'))]}"
+                            string="Put in draft"
+                            type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,validated"
+                           attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="has_already_approved" invisible="1"/>
+                    <field name="can_validate_product" invisible="1"/>
+                    <field name="department_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//notebook/page[last()]" position="after">
+                    <page id="product_validation_circuit" string="Validation circuit"
+                          attrs="{'invisible': ['|',('state', 'in', 'draft'), ('active', '=', True)], 'readonly': [('can_validate_product', '=', False)]}">
+                        <field name="product_circuit_validation_ids"
+                               attrs="{'readonly': ['|',('state', 'in', ('validated')), ('can_validate_product', '=', False)]}">
+                            <tree editable="top">
+                                <field name="user_id"
+                                       options="{'no_open': True, 'no_create': True, 'no_edit_create': True, 'no_quick_create': True}"
+                                       domain="[('share', '=', False)]" string="User"/>
+                                <field name="role" string="Role" readonly="1"/>
+                                <field name="state" readonly="1" widget="badge"
+                                       decoration-warning="state == 'refused'"
+                                       decoration-success="state == 'approved'"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_request_tree_view" model="ir.ui.view">
+            <field name="name">Product tree view</field>
+            <field name="model">product.template</field>
+            <field eval="7" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Products" default_order='create_date desc' multi_edit="1" duplicate="false" sample="1">
+                    <field name="default_code" optional="hide" readonly="1"/>
+                    <field name="barcode" optional="hide" readonly="1"/>
+                    <field name="name" readonly="1"/>
+                    <field name="list_price" optional="show" string="Selling price"/>
+                    <field name="standard_price" optional="show"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="categ_id" optional="hide"/>
+                    <field name="product_tag_ids" widget="many2many_tags"
+                           options="{'color_field': 'color', 'no_edit_color': 1}" optional="hide"/>
+                    <field name="state" string="Status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_request_act_window" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('active', '=', False)]</field>
+            <field name="context">{'default_active': False}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Please click here to request a new Product.
+                </p>
+            </field>
+        </record>
+
+        <record id="product_request_action_tree_view" model="ir.actions.act_window.view">
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="product_request_tree_view"/>
+            <field name="act_window_id" ref="product_request_act_window"/>
+        </record>
+
+        <record id="product_request_action_view" model="ir.actions.act_window.view">
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="product_template_only_form_inherit_view"/>
+            <field name="act_window_id" ref="product_request_act_window"/>
+        </record>
+
+    </data>
+</odoo>

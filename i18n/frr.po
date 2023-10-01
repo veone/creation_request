@@ -1,0 +1,388 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* creation_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e-20230615\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-25 20:13+0000\n"
+"PO-Revision-Date: 2023-09-25 20:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.inherit_hr_view_department_form
+msgid ""
+"<span class=\"oe_inline o_form_label mr-3 ml-5 oe_edit_only\" "
+"groups=\"\">/\n"
+"                                </span>"
+msgstr ""
+
+#. module: creation_request
+#: model:mail.activity.type,name:creation_request.product_mail_activity_data_to_do
+msgid "A Faire"
+msgstr "A Faire"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_template__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.inherit_hr_view_department_form
+msgid "Activity deadlines"
+msgstr "Délais"
+
+#. module: creation_request
+#: model:ir.model.fields.selection,name:creation_request.selection__product_circuit_validation__state__approved
+msgid "Approved"
+msgstr "Approuvé"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Are you sure you want to draft this creation request? ?"
+msgstr ""
+"Êtes-vous sûr de vouloir remettre en brouillon cette demande de création  ?"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Are you sure you want to forward this creation request ?"
+msgstr "Etes-vous sûr de vouloir soumettre cette demande de création ?"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Are you sure you want to reject this creation request? ?"
+msgstr "Etes-vous sûr de vouloir rejeter cette demande de création ?"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_product__can_validate_product
+#: model:ir.model.fields,field_description:creation_request.field_product_template__can_validate_product
+msgid "Can Validate Product"
+msgstr "Peut valider le produit"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_hr_department__can_apply_activity_deadlines
+msgid "Can he apply the deadlines for activities"
+msgstr "Peut-il appliquer les délais d'activités"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.inherit_hr_view_department_form
+msgid "Circuit of validation"
+msgstr "Circuit de validation"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_hr_department__circuit_ids
+#: model:ir.model.fields,field_description:creation_request.field_product_product__product_circuit_validation_ids
+#: model:ir.model.fields,field_description:creation_request.field_product_template__product_circuit_validation_ids
+msgid "Circuit of validation"
+msgstr "Circuit de validation"
+
+#. module: creation_request
+#: model:ir.model,name:creation_request.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: creation_request
+#: model:ir.actions.act_window,name:creation_request.action_creation_request_setting
+msgid "Configuration Product"
+msgstr "Configuration de Produit"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__create_uid
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__create_date
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_hr_department__activity_deadlines_number
+msgid "Deadlines"
+msgstr "Délais"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_res_config_settings__creation_default_department_id
+#: model_terms:ir.ui.view,arch_db:creation_request.creation_request_setting_form_view
+msgid "Default department"
+msgstr "Département par défaut"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__department_id
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__department_id
+#: model:ir.model.fields,field_description:creation_request.field_product_product__department_id
+#: model:ir.model.fields,field_description:creation_request.field_product_template__department_id
+msgid "Department"
+msgstr "Département"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Dismiss"
+msgstr "Rejeter"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__display_name
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Do you really want to validate this creation request? ?"
+msgstr "Voulez-vous vraiment valider cette demande de création ?"
+
+#. module: creation_request
+#: model:ir.model.fields.selection,name:creation_request.selection__product_template__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: creation_request
+#: model:ir.model.fields.selection,name:creation_request.selection__product_circuit__role__end_validator
+#: model:ir.model.fields.selection,name:creation_request.selection__product_circuit_validation__role__end_validator
+msgid "Final validator"
+msgstr "Validateur final"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_product__has_already_approved
+#: model:ir.model.fields,field_description:creation_request.field_product_template__has_already_approved
+msgid "Has Already Approved"
+msgstr "Est déjà approuvé"
+
+#. module: creation_request
+#: model:ir.model,name:creation_request.model_hr_department
+msgid "Hr department"
+msgstr "Département"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__id
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__id
+msgid "ID"
+msgstr "IDENTIFIANT"
+
+#. module: creation_request
+#: model:ir.model.fields,help:creation_request.field_product_template__active
+msgid ""
+"If unchecked, it will allow you to hide the product without removing it."
+msgstr ""
+"Décocher cette case vous permet de masquer le produit sans le supprimer."
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit____last_update
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__write_uid
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__write_date
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_hr_department__quorum_number_max
+msgid "Maximum quorum number"
+msgstr "Nombre de quorum maximum"
+
+#. module: creation_request
+#: model:ir.ui.menu,name:creation_request.creation_request_menui
+msgid "New product"
+msgstr "Nouveau produit"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_hr_department__quorum_number
+msgid "Number of quorum"
+msgstr "Nombre de quorum"
+
+#. module: creation_request
+#: model_terms:ir.actions.act_window,help:creation_request.product_request_act_window
+msgid "Please click here to request a new Product."
+msgstr "Veuillez cliquer ici pour demander un nouveau produit."
+
+#. module: creation_request
+#: model:ir.model.fields,help:creation_request.field_hr_department__quorum_number
+msgid ""
+"Please enter the minimum number of validations required. Nb: This number "
+"must be less than or equal to the quorum maci total"
+msgstr ""
+"Veuillez saisir le nombre minimum de validations requises. Nb : Ce nombre "
+"doit être inférieur ou égal au quorum maci total"
+
+#. module: creation_request
+#: model:ir.model.fields,help:creation_request.field_hr_department__activity_deadlines_number
+msgid ""
+"Please provide the deadlines for the activities generated for this step. "
+"Nb: This number must be greater than or equal to zero"
+msgstr ""
+"Veuillez fournir les délais pour les activités générées pour cette étape. "
+"Nb : Ce nombre doit être supérieur ou égal à zéro"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.creation_request_setting_form_view
+msgid ""
+"Please select the default department/service for the\n"
+"                                product validation circuit please"
+msgstr ""
+"Veuillez sélectionner le département/service par défaut pour le\n"
+"                                circuit de validation du produit s'il vous "
+"plaît"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: creation_request
+#: model:ir.model,name:creation_request.model_product_circuit_validation
+msgid "Product Circuit of validation"
+msgstr "Circuit de validation"
+
+#. module: creation_request
+#: model:ir.model,name:creation_request.model_product_circuit
+msgid "Product circuit"
+msgstr "Circuit de validation"
+
+#. module: creation_request
+#: model:ir.actions.act_window,name:creation_request.product_request_act_window
+#: model:ir.ui.menu,name:creation_request.creation_request_menu
+#: model_terms:ir.ui.view,arch_db:creation_request.product_request_tree_view
+msgid "Products"
+msgstr "Produit"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Put in draft"
+msgstr "Mettre en brouillon"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_hr_department__quorum
+#: model_terms:ir.ui.view,arch_db:creation_request.inherit_hr_view_department_form
+msgid "Quorum"
+msgstr "Quorum"
+
+#. module: creation_request
+#. odoo-python
+#: code:addons/creation_request/models/department.py:0
+#, python-format
+msgid "Quorum must be a positive number (%s)"
+msgstr "Le quorum doit être un nombre positif (%s)"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__name
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__name
+msgid "Reference"
+msgstr "Référence"
+
+#. module: creation_request
+#: model:ir.model.fields.selection,name:creation_request.selection__product_circuit_validation__state__refused
+msgid "Refused"
+msgstr "Refusé"
+
+#. module: creation_request
+#: model:ir.model.fields.selection,name:creation_request.selection__product_template__state__rejected
+msgid "Rejected"
+msgstr "Rejeté"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.inherit_hr_view_department_form
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Role"
+msgstr "Rôle"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_request_tree_view
+msgid "Selling price"
+msgstr "Prix ​​de vente"
+
+#. module: creation_request
+#: model:ir.model.fields.selection,name:creation_request.selection__product_template__state__sent
+msgid "Sent"
+msgstr "Validation"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.inherit_hr_view_department_form
+msgid "Set a deadline on activities"
+msgstr "Definir un délais sur les activités"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_product__state
+#: model:ir.model.fields,field_description:creation_request.field_product_template__state
+msgid "State"
+msgstr "Statut"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__state
+#: model_terms:ir.ui.view,arch_db:creation_request.product_request_tree_view
+msgid "Status"
+msgstr "Statut"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Submit the creation request"
+msgstr "Soumettre la demande de création"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__user_id
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__user_id
+#: model_terms:ir.ui.view,arch_db:creation_request.inherit_hr_view_department_form
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: creation_request
+#: model:ir.model.fields.selection,name:creation_request.selection__product_template__state__validated
+msgid "Valid"
+msgstr "Validé"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Validate"
+msgstr "Valider"
+
+#. module: creation_request
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit__role
+#: model:ir.model.fields,field_description:creation_request.field_product_circuit_validation__role
+msgid "Validation Profile"
+msgstr "Profil de validation"
+
+#. module: creation_request
+#: model_terms:ir.ui.view,arch_db:creation_request.product_template_only_form_inherit_view
+msgid "Validation circuit"
+msgstr "Circuit de validation"
+
+#. module: creation_request
+#: model:ir.model.fields.selection,name:creation_request.selection__product_circuit__role__validator
+#: model:ir.model.fields.selection,name:creation_request.selection__product_circuit_validation__role__validator
+msgid "Validator"
+msgstr "Validateur"
+
+#. module: creation_request
+#. odoo-python
+#: code:addons/creation_request/models/department.py:0
+#, python-format
+msgid ""
+"You must put a minimum number of validators, not greater than the number of "
+"assigned users (%s)"
+msgstr ""
+"Vous devez mettre un nombre minimum de validateur, pas plus grand que le "
+"nombre d'utilisateurs assignés (%s)"
+
+#. module: creation_request
+#: model:ir.model,name:creation_request.model_product_template
+msgid "product.template"
+msgstr "Produit"

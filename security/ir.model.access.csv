@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+001,Product Request,product.model_product_template,,1,1,1,0
+002,Product Request,product.model_product_product,,1,1,1,0
+003,product circuit,model_product_circuit,,1,1,1,1
+004,product circuit validation,model_product_circuit_validation,,1,1,1,1
+004_product_refused_validation,product refused validation,model_product_refused_validation,,1,1,1,1

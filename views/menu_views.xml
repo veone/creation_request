@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Products" id="creation_request_menu" web_icon="creation_request,static/description/icon.png"/>
+        <menuitem sequence="20" name="New product" id="creation_request_menui" parent="creation_request_menu"
+                  action="product_request_act_window"/>
+    </data>
+</odoo>
