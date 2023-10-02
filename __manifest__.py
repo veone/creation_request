@@ -4,8 +4,8 @@
     'summary': '',
     'description': 'Creation Request',
     'category': 'Request',
-    'author': 'Lagoh Kouadio Jean Rodrigue, DIBI Bi Kavola Augustin',
-    'website': 'veone.net',
+    'author': 'Veone Technologies',
+    'website': 'www.veone.net',
     'license': 'LGPL-3',
     'depends': [
         'base',
