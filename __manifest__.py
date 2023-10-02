@@ -28,7 +28,7 @@
         'static/description/icon.png',
         'static/description/list.png',
         'static/description/product_form.png',
-        'static/description/product.png',
+        'static/description/banner.png',
     ],
 
     'installable': True,
