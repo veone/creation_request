@@ -6,6 +6,7 @@
     'category': 'Request',
     'author': 'Veone Technologies',
     'website': 'www.veone.net',
+    'support': 'support@veone.net',
     'license': 'LGPL-3',
     'depends': [
         'base',
@@ -21,6 +22,13 @@
         'views/res_config_setting.xml',
         'views/department_view.xml',
         'views/menu_views.xml',
+    ],
+    'images': [
+        'static/description/approved.png',
+        'static/description/icon.png',
+        'static/description/list.png',
+        'static/description/product_form.png',
+        'static/description/product.png',
     ],
 
     'installable': True,
