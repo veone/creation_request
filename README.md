@@ -1,13 +1,12 @@
-# Product Creation Request Module for Odoo
+# Product creation request module for Odoo
 
 ## Description
-The "Product Creation Request" module is a custom extension for Odoo that allows users to request the creation of new products within the system.
+The “Product Creation Request” module allows users to request the creation of new products within the system. This greatly avoids duplicate records.
 
 ## Features
 - Users can submit product creation requests.
-- Requested products go through an approval workflow.
-- Administrators can review and approve product creation requests.
-- Once approved, new products are created in the system.
+- Admins can review and approve product creation requests.
+- Once approved, new products are available throughout the system.
 
 ## Installation
 To install this module in your Odoo instance, follow these steps:
