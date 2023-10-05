@@ -70,7 +70,9 @@
             <field name="model">product.template</field>
             <field eval="7" name="priority"/>
             <field name="arch" type="xml">
-                <tree string="Products" default_order='create_date desc' multi_edit="1" duplicate="false" sample="1">
+                <tree string="Products" decoration-info="state in 'sent'" decoration-it="state in 'draft'"
+                      decoration-success="state in 'validated'" decoration-warning="state in 'rejected'"
+                      default_order='create_date desc' multi_edit="1" duplicate="false" sample="1">
                     <field name="default_code" optional="hide" readonly="1"/>
                     <field name="barcode" optional="hide" readonly="1"/>
                     <field name="name" readonly="1"/>
@@ -80,7 +82,9 @@
                     <field name="categ_id" optional="hide"/>
                     <field name="product_tag_ids" widget="many2many_tags"
                            options="{'color_field': 'color', 'no_edit_color': 1}" optional="hide"/>
-                    <field name="state" string="Status"/>
+                    <field name="state" string="Status" widget="badge"
+                           decoration-info="state in 'sent'" decoration-it="state in 'draft'"
+                           decoration-success="state in 'validated'" decoration-warning="state in 'rejected'"/>
                 </tree>
             </field>
         </record>

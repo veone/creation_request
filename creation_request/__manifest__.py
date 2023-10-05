@@ -1,10 +1,10 @@
 {
     'name': 'Product Validation',
     'version': '16.0.0.1',
-    'summary': '',
+    'summary': "This module is designed to add a custom validation feature when creating or modifying products in Odoo",
     'description': 'Creation Request',
     'category': 'Request',
-    'author': 'Veone Technologies',
+    'author': 'VEONE',
     'website': 'www.veone.net',
     'support': 'support@veone.net',
     'license': 'LGPL-3',
