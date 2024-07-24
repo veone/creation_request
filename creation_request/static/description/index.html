@@ -1,48 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Odoo Module - Presentation</title>
-    <!-- Include links to CSS files here if necessary -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Validation Module</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #3498db;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #3498db;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        ul, ol {
+            margin-bottom: 20px;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Product creation request</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Main Features</h2>
-            <div>
-                <img src="banner.png" alt="Illustration Image 1">
-            </div>
-            <ul>
-                <li>
-                    <h3>Users can submit product creation requests</h3>
-                    <div>
-                        <img src="product_form.png" alt="Illustration Image 2" width="90%">
-                    </div>
-                    <p>Users have the capability to submit requests for the creation of new products. This feature allows employees or authorized individuals to initiate the process of adding new products to the company's inventory or catalog. By providing essential details and specifications through a structured request form, users can efficiently communicate their product ideas or requirements to the relevant departments or teams responsible for product management. This streamlined process enhances collaboration and ensures that new product suggestions are captured and evaluated for potential implementation within the organization.</p>
-                </li>
-                <li>
-                    <h3>Admins can review and approve product creation requests.</h3>
-                    <div>
-                        <img src="approved.png" alt="Illustration Image 2" width="90%">
-                    </div>
-                    <p>In our system, administrators have the capability to thoroughly assess and grant approval for product creation requests. This functionality empowers administrators to meticulously examine the details of each product creation proposal, ensuring its compliance with established standards and criteria. Once reviewed and deemed suitable, administrators can readily approve these requests, facilitating a streamlined and controlled process for introducing new products into our system. This feature enhances transparency and accountability, as it enables administrators to make informed decisions while maintaining the integrity of our product catalog.</p>
-                </li>
-                <li>
-                    <h3>Avoid Duplicate Products</h3>
-                    <div>
-                        <img src="list.png" alt="Illustration Image 2" width="90%">
-                    </div>
-                    <p>This feature is crucial for maintaining data accuracy and ensuring efficient inventory and catalog management. By implementing this functionality, the system can intelligently detect and alert users when they attempt to add a product that already exists, thereby minimizing data redundancy and the risk of inconsistencies. This not only streamlines data entry processes but also enhances overall data quality, helping organizations maintain a clean and organized product catalog, which is essential for effective decision-making and operations.</p>
-                </li>
-                <!-- Add other features here -->
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>For more information and details about our Odoo module, please contact us at support@veone.net.</p>
-    </footer>
+<div class="container">
+    <br>
+    <h1 align="center" style="color: gray;">Product Validation Module for Odoo</h1><br/>
+    <img width="90%" align="center" src="banner.png"/><br/><br/>
+    <h4 align="center">
+        Welcome to the product validation module description page for Odoo. This module is designed to
+        add a custom validation feature when creating or modifying products in Odoo.
+    </h4><br/>
+    <img width="90%" align="center" src="product_form.png"/><br/><br/>
+    <ul>
+        <li>Users have the capability to submit requests for the creation of new products. This feature allows employees
+            or
+            authorized individuals to initiate the process of adding new products to the company's inventory or catalog.
+            By
+            providing essential details and specifications through a structured request form, users can efficiently
+            communicate their product ideas or requirements to the relevant departments or teams responsible for product
+            management. This streamlined process enhances collaboration and ensures that new product suggestions are
+            captured and evaluated for potential implementation within the organization.
+        </li>
+    </ul>
+
+    <h2>Key Features:</h2>
+    <ul>
+        <li>
+            In our system, administrators have the capability to thoroughly assess and grant approval for product
+            creation requests. This functionality empowers administrators to meticulously examine the details of each
+            product creation proposal, ensuring its compliance with established standards and criteria. Once reviewed
+            and deemed suitable, administrators can readily approve these requests, facilitating a streamlined and
+            controlled process for introducing new products into our system. This feature enhances transparency and
+            accountability, as it enables administrators to make informed decisions while maintaining the integrity of
+            our product catalog :
+        </li>
+        <br/>
+        <img width="90%" align="center" src="approved.png"/><br/><br/>
+        <li>Definition of validators (Person authorized to validate a product) :</li>
+        <img width="90%" align="center" src="config_validators.png"/><br/>
+        <li>Definition of default validators (if no validators are defined in the current department) :</li>
+        <br/>
+        <img width="90%" align="center" src="default_department.png"/><br/><br/>
+        <li>Definition of a product validation quorum</li>
+        <li>Definition of the deadline for generated activities</li>
+        <li>Enhancement of product management in Odoo.</li>
+        <br/>
+        <img width="90%" align="center" src="list.png"/>
+    </ul>
+    <p>This feature is crucial for maintaining data accuracy and ensuring efficient inventory and catalog management. By
+        implementing this functionality, the system can intelligently detect and alert users when they attempt to add a
+        product that already exists, thereby minimizing data redundancy and the risk of inconsistencies. This not only
+        streamlines data entry processes but also enhances overall data quality, helping organizations maintain a clean
+        and organized product catalog, which is essential for effective decision-making and operations.</p>
+
+    <h2>Installation :</h2>
+    <p>
+        To install this module, follow the steps below:
+    </p>
+    <ol>
+        <li>Download the module file.</li>
+        <li>Place the file in the Odoo modules directory.</li>
+        <li>Access Odoo and install the module via the administration interface.</li>
+    </ol>
+
+    <h2>Configuration :</h2>
+    <ol>
+        <li>Grant administrator rights to users who can configure validators :</li>
+        <br/>
+        <li>Definition of validators (Persons authorized to validate a product) :</li>
+        <br/>
+        <li>Definition of a product validation quorum and the deadline for activities (if necessary) :</li>
+        <br/>
+        <img width="90%" align="center" src="config_validators.png">
+    </ol>
+
+    <h2>Technical Support :</h2>
+    <p>
+        If you encounter any issues or have questions, please contact our technical support team at
+        <a href="mailto:infos@veone.net">infos@veone.net</a> or visit our website <a
+            href="https://www.veone.net">Veone</a>.
+    </p>
+</div>
 </body>
 </html>
-

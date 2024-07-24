@@ -13,16 +13,25 @@ class ProductRequest(models.Model):
     # -------------------------------------------------------------------------
     # Fields
     # -------------------------------------------------------------------------
-    active = fields.Boolean(default=False)
+
+    active = fields.Boolean(default=False, copy=False)
     state = fields.Selection(
         [('rejected', 'Rejected'), ('draft', 'Draft'), ('sent', 'Sent'), ('validated', 'Valid')], default='draft',
         tracking=True, readonly=True)
-    product_circuit_validation_ids = fields.One2many('product.circuit.validation', 'product_id',
-                                                     string="Circuit of validation")
     can_validate_product = fields.Boolean(default=False, compute='_onchange_assign_mail_boolean')
     has_already_approved = fields.Boolean(default=False, compute='_onchange_has_already_approved')
     department_id = fields.Many2one('hr.department', default=lambda self: self.env.user.employee_ids.department_id,
                                     string="Department", tracking=3)
+    product_circuit_validation_ids = fields.One2many('product.circuit.validation', 'product_id',
+                                                     string="Circuit of validation")
+
+    def write(self, vals):
+        for record in self:
+            if 'active' in vals and record.state in ('rejected', 'draft'):
+                raise UserError("Vous ne pouvez pas archiver ou désarchiver à cette étape.")
+            elif 'active' in vals and record.state in ('rejected', 'draft', 'sent') and not record.can_validate_product:
+                raise UserError("Vous ne pouvez pas archiver ou désarchiver.")
+            return super(ProductRequest, self).write(vals)
 
     @api.onchange('product_circuit_validation_ids', 'can_validate_product')
     def _onchange_assign_mail_boolean(self):
@@ -32,28 +41,25 @@ class ProductRequest(models.Model):
         """
         for line in self:
             line.can_validate_product = False
-            if line.state in 'draft':
+            if 'draft' in line.state:
                 line.can_validate_product = True
             for validator in line.product_circuit_validation_ids:
                 if validator.user_id.id == self.env.user.id:
                     line.can_validate_product = True
                     break
-
-    @api.depends('department_id')
-    @api.onchange('department_id')
-    def _onchange_circuit(self):
-        """
-        This function is use to charge default circuit_of_validation of current user department_id
-        """
-        for record in self:
-            department_default_id = self.env['ir.config_parameter'].sudo().get_param(
-                'creation_request.creation_default_department_id')
-            record.product_circuit_validation_ids = [(5, 0, 0)]
-            default_department_id = self.env['hr.department'].sudo().search([('id', '=', department_default_id)],
-                                                                            limit=1, order='id desc')
-            record.product_circuit_validation_ids = [(0, 0, {'user_id': line.user_id.id, 'role': line.role}) for line in
-                                                     record.department_id.circuit_ids] if record.department_id.circuit_ids else [
-                (0, 0, {'user_id': line.user_id.id, 'role': line.role}) for line in default_department_id.circuit_ids]
+            if not line.product_circuit_validation_ids:
+                line.can_validate_product = True
+            if line.state in ('draft'):
+                department_default_id = self.env['ir.config_parameter'].sudo().get_param(
+                    'creation_request.creation_default_department_id')
+                line.product_circuit_validation_ids = [(5, 0, 0)]
+                default_department_id = self.env['hr.department'].sudo().search([('id', '=', department_default_id)],
+                                                                                limit=1, order='id desc')
+                line.product_circuit_validation_ids = [(0, 0, {'user_id': line.user_id.id, 'role': line.role}) for line
+                                                       in
+                                                       line.department_id.circuit_ids] if line.department_id.circuit_ids else [
+                    (0, 0, {'user_id': line.user_id.id, 'role': line.role}) for line in
+                    default_department_id.circuit_ids]
 
     def create_activity_creation_request(self, task, user_id, msg, days, activity_type_id, res_model_id, res_id):
         """

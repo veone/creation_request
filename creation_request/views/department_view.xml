@@ -13,14 +13,14 @@
                             <field string="Set a deadline on activities" name="can_apply_activity_deadlines"
                                    widget="boolean_toggle"/>
                         </group>
-                        <group attrs="{'invisible': [('can_apply_activity_deadlines', '=', False)]}">
+                        <group invisible="not can_apply_activity_deadlines">
                             <field name="activity_deadlines_number"/>
                         </group>
                         <separator string="Quorum"/>
                         <group>
                             <field name="quorum" widget="boolean_toggle"/>
                         </group>
-                        <group attrs="{'invisible': [('quorum', '=', False)]}">
+                        <group invisible="not quorum">
                             <label for="quorum_number"/>
                             <div name="quorum_number_div" class="d-flex">
                                 <field name="quorum_number"/>

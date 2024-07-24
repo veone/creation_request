@@ -4,3 +4,8 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 003,product circuit,model_product_circuit,,1,1,1,1
 004,product circuit validation,model_product_circuit_validation,,1,1,1,1
 004_product_refused_validation,product refused validation,model_product_refused_validation,,1,1,1,1
+004_sale_order_line,sale order line,sale.model_sale_order_line,,1,1,1,1
+004_product_pricing,product pricing,sale_renting.model_product_pricing,,1,1,1,1
+004_product_template_attribute_line,product attribute line,product.model_product_template_attribute_line,,1,1,1,1
+004_product_template_attribute_value,product attribute value,product.model_product_template_attribute_value,,1,1,1,1
+004_product_attribute,product attribute,product.model_product_attribute,,1,1,1,1

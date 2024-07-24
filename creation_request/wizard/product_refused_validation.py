@@ -16,8 +16,8 @@ class ProductRefusedValidation(models.TransientModel):
         """
         # Post a second message, more verbose than the tracking message
         if self.product_id.create_uid:
-            message = (f'Ce produit a été réfusé par <b>{self.env.user.name}</b> avec le justificatif : '
-                       f'<b>{self.reason}</b>') if self.env.user.lang in 'fr_FR' else \
-                f'This product has been rejected by <b>{self.env.user.name}</b> with the justification: <b>{self.reason}</b>'
+            message = (f'Ce produit a été réfusé par {self.env.user.name} avec le justificatif : '
+                       f'{self.reason}') if self.env.user.lang in 'fr_FR' else \
+                f'This product has been rejected by {self.env.user.name} with the justification: {self.reason}'
             self.product_id.message_post(body=_(message))
             self.product_id.from_sent_to_rejected()
